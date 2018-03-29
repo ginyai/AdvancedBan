@@ -30,6 +30,10 @@
             <id>md_5-snapshots</id>
             <url>http://repo.md-5.net/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>sponge</id>
+            <url>https://repo.spongepowered.org/maven/</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -43,6 +47,12 @@
             <artifactId>bungeecord-api</artifactId>
             <version>1.12-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>spongeapi</artifactId>
+            <version>5.1.0</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.imaginarycode.minecraft</groupId>
@@ -65,6 +75,12 @@
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bungeecord</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-sponge</artifactId>
             <version>1.2</version>
             <scope>compile</scope>
         </dependency>
@@ -118,11 +134,16 @@
                             <shadedPattern>${project.groupId}</shadedPattern>
                             <excludes>
                                 <exclude>org.bstats.bungeecord.*</exclude>
+                                <exclude>org.bstats.sponge.*</exclude>
                             </excludes>
                         </relocation>
                         <relocation>
                             <pattern>org.bstats.bungeecord</pattern>
                             <shadedPattern>${project.groupId}.bungee</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.bstats.sponge</pattern>
+                            <shadedPattern>${project.groupId}.sponge</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

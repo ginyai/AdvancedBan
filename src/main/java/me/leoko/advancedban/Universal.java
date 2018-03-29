@@ -64,7 +64,6 @@ public class Universal {
         mi.setCommandExecutor("banip");
         mi.setCommandExecutor("tempipban");
         mi.setCommandExecutor("tipban");
-        mi.setCommandExecutor("banip");
         mi.setCommandExecutor("kick");
         mi.setCommandExecutor("warn");
         mi.setCommandExecutor("tempwarn");
